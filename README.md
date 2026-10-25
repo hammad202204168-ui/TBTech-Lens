@@ -3,9 +3,8 @@
 # TBTech Lens
 
 Clinical and chest X-ray screening for tuberculosis, with explanations and a printable report. English and Urdu.
-Maintainer: Hammad Anwar, MolecuNova.
+Maintainer: Hammad Anwar,Ali Murtasim.
 
-> Screening support, not a diagnosis. Only a laboratory test and a doctor can confirm or exclude TB. Results can differ between people and settings, so check the tool against your own laboratory results before relying on it.
 
 ## What it does
 | You give | You get |
