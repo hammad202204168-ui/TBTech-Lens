@@ -1,0 +1,63 @@
+{
+ "n": 1200,
+ "wall_s": 5.1,
+ "throughput_per_s": 233.2,
+ "p50_ms": 52.1,
+ "p95_ms": 143.4,
+ "p99_ms": 383.8,
+ "http": {
+  "200": 1120,
+  "422": 80
+ },
+ "saved": 1120,
+ "no_symptom_not_lower": 0,
+ "no_symptom_n": 60,
+ "no_symptom_told_to_get_assessed": 0,
+ "by_persona": {
+  "typical": {
+   "Lower": 573,
+   "warn:": 0,
+   "tier:A": 700,
+   "Higher": 35,
+   "Intermediate": 92
+  },
+  "with_crp": {
+   "Lower": 33,
+   "warn:": 0,
+   "tier:A+CRP": 100,
+   "Intermediate": 43,
+   "Higher": 24
+  },
+  "crp_cad": {
+   "Lower": 57,
+   "warn:": 0,
+   "tier:A+CRP+CAD": 100,
+   "Intermediate": 25,
+   "Higher": 18
+  },
+  "cad_fraction": {
+   "Lower": 100,
+   "warn:cad,cad_scale": 100,
+   "tier:A+CAD": 100
+  },
+  "crp_mg_dl_unit": {
+   "Intermediate": 29,
+   "warn:": 0,
+   "tier:A+CRP": 60,
+   "Lower": 14,
+   "Higher": 17
+  },
+  "no_symptoms": {
+   "Lower": 60,
+   "warn:": 0,
+   "tier:A": 60
+  },
+  "wrong_type": {
+   "HTTP 422": 40
+  },
+  "bad_age": {
+   "HTTP 422": 40
+  }
+ },
+ "cad_fraction_mean_underestimate_pp": 6.3
+}

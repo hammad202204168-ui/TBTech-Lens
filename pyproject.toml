@@ -1,0 +1,12 @@
+[project]
+name = "tb-screen"
+version = "3.0.0"
+description = "TB screening decision support (symptoms, CRP, CAD) with explanations. Not a diagnostic device."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Hammad Anwar", email = "jl3620031@gmail.com"}]
+requires-python = ">=3.10"
+[project.urls]
+Homepage = "https://github.com/MolecuNova/tb-screen"
+[tool.pytest.ini_options]
+testpaths = ["tests"]

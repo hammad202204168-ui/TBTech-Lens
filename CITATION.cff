@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use TB-Screen, please cite it and the training dataset (doi:10.17037/DATA.00005150)."
+title: "TB-Screen: TB risk screening for adults"
+version: 3.0.0
+authors:
+  - family-names: Anwar
+    given-names: Hammad
+    affiliation: MolecuNova
+license: MIT
+repository-code: "https://github.com/MolecuNova/tb-screen"

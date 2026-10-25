@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+data/*.db
+data/*.db-shm
+data/*.db-wal
+tests/_test.db
+.venv/
+.env
+.env.*
+!.env.example
+desktop.ini

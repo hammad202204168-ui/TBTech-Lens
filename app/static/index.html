@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TBTech Lens</title><link rel="icon" href="/api/mascot/Lower?bg=0" type="image/svg+xml">
+<link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<header class="hero"><div class="w">
+  <div class="bar"><div class="brandmini"><img src="/assets/molecunova_logo_small.png" alt="MolecuNova"><span>MolecuNova</span></div>
+  <div class="lang" role="group" aria-label="Language"><button id="len" class="on" type="button">English</button><button id="lur" type="button">اردو</button></div></div>
+  <div class="heroin"><div><h1 id="appname">TBTech Lens</h1><p data-k="tagline"></p></div><div class="heromas" id="heromas" aria-hidden="true"></div></div>
+</div><div id="bubs" aria-hidden="true"></div>
+<div class="wave" aria-hidden="true"><svg viewBox="0 0 1200 54" preserveAspectRatio="none"><path d="M0 28 Q150 0 300 28 T600 28 T900 28 T1200 28 V54 H0Z" fill="#FFFAF1"/></svg></div></header>
+<main class="w">
+  <div class="tabs" role="tablist"><button role="tab" id="t_new" aria-selected="true" data-k="tab_new" type="button"></button><button role="tab" id="t_rec" aria-selected="false" data-k="tab_rec" type="button"></button></div>
+  <div class="note" data-k="disclaimer"></div>
+  <section id="v_new">
+  <div class="modes" role="tablist" id="modes">
+    <button role="tab" id="m_clinical" aria-selected="true" data-k="mode_clinical" type="button"></button>
+    <button role="tab" id="m_xray" aria-selected="false" data-k="mode_xray" type="button"></button>
+    <button role="tab" id="m_both" aria-selected="false" data-k="mode_both" type="button"></button>
+  </div>
+  <p class="hint" id="hint"></p>
+  <div class="grid">
+    <form id="fm" novalidate>
+      <section class="card" id="pc"><h2 data-k="sec_person"></h2><div class="f">
+        <label class="l"><span data-k="age_years"></span><input id="age" type="number" inputmode="numeric" min="15" max="110"></label>
+        <div><span class="l" data-k="sex"></span><div class="seg"><label><input type="radio" name="sex" value="f"><span data-k="female"></span></label><label><input type="radio" name="sex" value="m"><span data-k="male"></span></label></div></div>
+        <label class="l"><span data-k="tbtx"></span><select id="tbh"><option value="never" data-k="tbtx0"></option><option value="past" data-k="tbtx1"></option><option value="current" data-k="tbtx2"></option></select></label>
+      </div></section>
+      <section class="card" id="sc"><h2 data-k="sec_symp"></h2><div class="f">
+        <label class="chk"><input type="checkbox" id="cough"><span data-k="cough"></span></label><label class="chk"><input type="checkbox" id="fever"><span data-k="fever"></span></label>
+        <label class="chk"><input type="checkbox" id="nightsweats"><span data-k="nightsweats"></span></label><label class="chk"><input type="checkbox" id="weightlost"><span data-k="weightlost"></span></label>
+        <label class="chk"><input type="checkbox" id="chestpain"><span data-k="chestpain"></span></label></div>
+        <label class="l" id="durbox" style="display:none;margin-top:12px"><span data-k="cough_dur"></span><select id="dur"></select></label></section>
+      <section class="card" id="tc"><h2 data-k="sec_tests"></h2><div class="f">
+        <label class="l"><span data-k="crp"></span><input id="crp" type="number" step="any" min="0" max="900"></label>
+        <label class="l"><span data-k="cad"></span><input id="cad" type="number" step="any" min="0" max="100"></label></div></section>
+      <section class="card" id="up"><h2 data-k="up_title"></h2><p class="mut" style="margin-top:0" data-k="up_hint"></p>
+        <label class="btn" id="upl" style="display:inline-block"><input type="file" id="rep" accept=".pdf,.png,.jpg,.jpeg,.txt,application/pdf,image/png,image/jpeg,text/plain" style="display:none"><span data-k="up_btn"></span></label><div id="upres" class="upres" aria-live="polite"></div></section>
+      <section class="card" id="mc"><h2 data-k="sec_more"></h2><div class="f">
+        <label class="chk"><input type="checkbox" id="hemoptysis"><span data-k="hemoptysis"></span></label><label class="chk"><input type="checkbox" id="breathless"><span data-k="breathless"></span></label>
+        <label class="chk"><input type="checkbox" id="fatigue"><span data-k="fatigue"></span></label><label class="chk"><input type="checkbox" id="appetite_loss"><span data-k="appetite_loss"></span></label>
+        <label class="chk"><input type="checkbox" id="diabetes"><span data-k="diabetes"></span></label><label class="chk"><input type="checkbox" id="contact"><span data-k="contact"></span></label><label class="chk"><input type="checkbox" id="smoker"><span data-k="smoker"></span></label>
+        <label class="l"><span data-k="hiv"></span><select id="hiv"><option value="" data-k="hiv_u"></option><option value="neg" data-k="hiv_n"></option><option value="pos" data-k="hiv_p"></option></select></label>
+        <label class="l"><span data-k="bmi"></span><input id="bmi" type="number" step="any" min="8" max="70"></label></div></section>
+      <section class="card" id="lc"><h2 data-k="sec_labs"></h2><div class="f">
+        <label class="l"><span data-k="esr"></span><input id="esr" type="number" step="any" min="0" max="200"></label><label class="l"><span data-k="wbc"></span><input id="wbc" type="number" step="any" min="0" max="500"></label><label class="l"><span data-k="hb"></span><input id="hb" type="number" step="any" min="2" max="25"></label>
+        <label class="l"><span data-k="xpert"></span><select id="xpert"><option value="" data-k="o_none"></option><option value="not_detected" data-k="o_nd"></option><option value="detected" data-k="o_det"></option><option value="rif_resistant" data-k="o_rif"></option></select></label>
+        <label class="l"><span data-k="afb"></span><select id="afb"><option value="" data-k="o_none"></option><option value="neg" data-k="o_neg"></option><option value="pos" data-k="o_pos"></option></select></label><label class="l"><span data-k="culture"></span><select id="culture"><option value="" data-k="o_none"></option><option value="neg" data-k="o_neg"></option><option value="pos" data-k="o_pos"></option></select></label><label class="l"><span data-k="igra"></span><select id="igra"><option value="" data-k="o_none"></option><option value="neg" data-k="o_neg"></option><option value="pos" data-k="o_pos"></option></select></label>
+        <label class="l"><span data-k="mantoux"></span><input id="mantoux_mm" type="number" step="any" min="0" max="40"></label></div></section>
+      <section class="card" id="xc"><h2 data-k="sec_xray"></h2>
+        <label class="drop" id="drop"><input type="file" id="img" accept="image/png,image/jpeg"><b data-k="xray_drop"></b><br><span class="mut" id="xhint"></span></label>
+        <div class="pv" id="pv"><img id="pvimg" alt=""></div></section>
+      <section class="card"><label class="l"><span data-k="ref"></span><input id="ref" type="text" maxlength="40" autocomplete="off"></label><small class="mut" data-k="ref_hint"></small>
+        <label class="chk savebox"><input type="checkbox" id="save"><span data-k="save_visit"></span></label></section>
+      <button class="go" id="go" type="submit"></button><p class="err" id="ferr" role="alert"></p>
+    </form>
+    <div class="result" id="out" aria-live="polite"></div>
+  </div></section>
+  <section id="v_rec" style="display:none"><div class="card"><div class="srch"><input id="q" type="search" autocomplete="off"></div><div class="srch"><input id="rn" type="search" autocomplete="off" aria-label="Report number" maxlength="30"><button class="btn" id="rnb" type="button" data-k="rep_find"></button></div><div id="rl"></div><p class="err" id="rerr" role="alert"></p>
+    <div class="actions" style="margin-top:12px"><a class="btn" id="exp" href="#" role="button" data-k="rec_export"></a></div></div><div id="rd"></div></section>
+  <footer data-k="disclaimer"></footer>
+</main>
+<script>
+const $=s=>document.querySelector(s);let T={},L="en",INFO={xray_available:false},MODE="clinical",LAST=null,LASTIMG=null,PIN="";
+try{L=localStorage.getItem("lang")||"en";PIN=sessionStorage.getItem("pin")||""}catch(e){}
+const t=(k,v)=>{let s=(T[L]||{})[k]??(T.en||{})[k]??k;for(const a in v||{})s=s.split("{"+a+"}").join(v[a]);return s};
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const MAS={};async function mas(b,bg){const k=b+bg;if(!MAS[k]){try{MAS[k]=await(await fetch(`/api/mascot/${b}?bg=${bg}`)).text()}catch(e){MAS[k]=""}}return MAS[k]}
+const bubs=()=>{$("#bubs").innerHTML=Array.from({length:14},(_,i)=>{const s=10+Math.random()*34;return `<span class="bub" style="left:${Math.random()*100}%;width:${s}px;height:${s}px;animation-duration:${7+Math.random()*9}s;animation-delay:${-Math.random()*12}s"></span>`}).join("")};
+const EMPTY=()=>`<div class="card empty"><div id="emas"></div><p data-k="mode_hint"></p></div>`;
+function hdrs(){const h={};if(PIN)h["X-Pin"]=PIN;return h}
+function apply(){const d=(T[L]||{}).dir||"ltr";document.documentElement.lang=L;document.documentElement.dir=d;document.body.classList.toggle("ur",L==="ur");
+ document.querySelectorAll("[data-k]").forEach(e=>e.textContent=t(e.dataset.k));
+ $("#len").classList.toggle("on",L==="en");$("#lur").classList.toggle("on",L==="ur");
+ const cur=$("#dur").value;$("#dur").innerHTML=`<option value="">${t("choose")}</option>`+[1,2,3,4,5].map(i=>`<option value="${i}">${t("d"+i)}</option>`).join("");$("#dur").value=cur;
+ $("#xhint").textContent=INFO.xray_available?t("xray_none"):t("xray_na");$("#go").textContent=t("go");$("#hint").textContent=t("mode_hint");$("#q").placeholder=t("rec_search");
+ document.title=INFO.name||"TBTech Lens";$("#appname").textContent=INFO.name||"TBTech Lens";
+ if(!LAST){$("#out").innerHTML=EMPTY();document.querySelectorAll("#out [data-k]").forEach(e=>e.textContent=t(e.dataset.k));mas("Lower",0).then(s=>{const e=$("#emas");if(e)e.innerHTML=s})}else render(LAST);
+ if($("#v_rec").style.display!=="none")loadList()}
+function setL(l){L=l;try{localStorage.setItem("lang",l)}catch(e){}apply()}
+$("#len").onclick=()=>setL("en");$("#lur").onclick=()=>setL("ur");
+function setMode(m){MODE=m;for(const k of["clinical","xray","both"])$("#m_"+k).setAttribute("aria-selected",k===m);
+ const c=m!=="xray",x=m!=="clinical";for(const id of["pc","sc","tc","mc","lc"])$("#"+id).style.display=c?"":"none";$("#xc").style.display=x?"":"none";$("#ferr").textContent=""}
+for(const k of["clinical","xray","both"])$("#m_"+k).onclick=()=>setMode(k);
+function tab(n){const r=n==="rec";$("#v_new").style.display=r?"none":"";$("#v_rec").style.display=r?"":"none";$("#t_new").setAttribute("aria-selected",!r);$("#t_rec").setAttribute("aria-selected",r);if(r)loadList()}
+$("#t_new").onclick=()=>tab("new");$("#t_rec").onclick=()=>tab("rec");
+$("#cough").onchange=e=>{$("#durbox").style.display=e.target.checked?"block":"none"};
+$("#img").onchange=e=>{const f=e.target.files[0];if(f){LASTIMG=URL.createObjectURL(f);$("#pvimg").src=LASTIMG;$("#pv").style.display="block"}else{$("#pv").style.display="none";LASTIMG=null}};
+function heatCanvas(h){const g=h.length,cv=document.createElement("canvas");cv.width=cv.height=g;const x=cv.getContext("2d"),im=x.createImageData(g,g);
+ for(let r=0;r<g;r++)for(let c=0;c<g;c++){const v=h[r][c],i=(r*g+c)*4;im.data[i]=255;im.data[i+1]=Math.round(190-120*v);im.data[i+2]=Math.round(40-30*v);im.data[i+3]=Math.round(230*Math.pow(v,.8))}x.putImageData(im,0,0);return cv}
+const ARW={improving:"↘",similar:"→",worsening:"↗"},TCOL={improving:"var(--lo)",similar:"var(--mut)",worsening:"var(--hi)"};
+function chart(vs){if(!vs.length)return"";const W=520,H=190,pl=34,pr=14,pt=12,pb=28,n=vs.length,X=i=>n===1?(W+pl-pr)/2:pl+i*(W-pl-pr)/(n-1),Y=p=>pt+(1-p)*(H-pt-pb);
+ const z=[["#E6F7EE",0,1/3],["#FFF3DC",1/3,2/3],["#FFE6E3",2/3,1]].map(([c,a,b])=>`<rect x="${pl}" y="${Y(b)}" width="${W-pl-pr}" height="${Y(a)-Y(b)}" fill="${c}"/>`).join("");
+ const pts=vs.map((v,i)=>[X(i),Y(Math.max(0,Math.min(1,v.position)))]);const ln=pts.map((p,i)=>(i?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1)).join("");
+ const col={Lower:"#2FA37A",Intermediate:"#F29D1F",Higher:"#E5484D"};
+ return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("chart_title"))}">${z}<path d="${ln}" fill="none" stroke="#7C4A1D" stroke-width="2.5" stroke-linejoin="round"/>${pts.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="6" fill="${col[vs[i].overall]}" stroke="#fff" stroke-width="2"><title>${esc(vs[i].ts.slice(0,10)+" · "+t("band_"+vs[i].overall))}</title></circle>`).join("")}
+ ${vs.map((v,i)=>`<text x="${X(i)}" y="${H-8}" font-size="11" text-anchor="middle" fill="#7C6A5A">${esc(v.ts.slice(5,10))}</text>`).join("")}
+ <text x="4" y="${Y(.83)+4}" font-size="10" fill="#B3262C">▲</text><text x="4" y="${Y(.17)+4}" font-size="10" fill="#1B7A59">▼</text></svg>`}
+async function render(j){LAST=j;const O=j.overall,tx=j.text[L],ex=j.extra[L],x=j.xray||{},c=j.clinical;let d=0;const dl=()=>`style="animation-delay:${(d++)*0.1}s"`;
+ const xr=x.band?`<span class="pill ${x.band}">${esc(t("x_"+x.band))}</span>`:`<span class="mut">${x.error&&x.error!=="not_installed"?esc(t("xray_failed",{e:x.error})):x.error==="not_installed"?esc(t("xray_na")):esc(t("not_done"))}</span>`;
+ const mx=c?Math.max(...c.reasons.map(r=>Math.abs(r.effect)),.01):1;
+ const bars=c?c.reasons.map(r=>{const w=Math.abs(r.effect)/mx*50,up=r.effect>0;return `<div class="bar"><span>${esc(t("f_"+r.feature))}</span><div class="bt"><i style="background:${up?"var(--hi)":"#2F8FBF"};width:${w}%;${up?"left:50%":"right:50%"}"></i></div><em style="color:${up?"var(--hi)":"#2F6F8F"}">${up?"+":"−"}${Math.abs(r.effect).toFixed(2)}</em></div>`}).join(""):"";
+ const warn=(j.warnings||[]).map(n=>`<div class="warnbox">${esc(n==="cad_scale"?t("cad_scale"):t("oor",{x:t("f_"+n)}))}</div>`).join("");
+ const sn=(j.support_notes||{})[L]||{},ms=await mas(O,1),tt=(j.trend_text||{})[L]||[],tr=j.trend;
+ $("#out").innerHTML=`<section class="card"><h2>${esc(t("res_overall"))}</h2><div class="stage"><div><div class="mascot">${ms}</div><div class="mcap">${esc(t("mas_"+O))}</div></div><div><div class="verdict ${O}"><h3>${esc(t("band_"+O))}</h3><div class="score"><span id="sc_n" data-to="${Math.round(j.position*100)}">0</span><small>/100</small></div><p>${esc(t("bt_"+O))}</p></div>
+ <div class="meter" aria-hidden="true"><i id="mk" style="left:0"></i></div></div></div>
+ <div class="sub"><div><b>${esc(t("res_clin"))}</b>${c?`<span class="pill ${c.band}">${esc(t("band_"+c.band))}</span>`:`<span class="mut">${esc(t("not_done"))}</span>`}</div><div><b>${esc(t("res_xray"))}</b>${xr}</div></div>${warn}
+ ${j.report_no?`<p class="rno">✔ ${esc(t("saved_ok",{r:j.ref}))} <b>${esc(t("rep_no"))}: <code>${esc(j.report_no)}</code></b></p>`:`<p class="mut" style="margin:12px 0 0;font-size:.85rem">${esc(t("rep_unsaved"))}</p>`}</section>
+ ${tr?`<section class="card"><h2>${esc(t("res_trend"))}</h2><div class="trend"><span class="arrow" style="color:${TCOL[tr.label]}">${ARW[tr.label]}</span><span class="pill ${tr.label==="improving"?"Lower":tr.label==="worsening"?"Higher":"Intermediate"}">${esc(t("tr_"+tr.label))}</span><span class="mut">${esc(t("visits_n",{n:(j.history||[]).length}))}</span></div>${tt.map(s=>`<p style="margin:4px 0">${esc(s)}</p>`).join("")}<div class="chart">${chart(j.history||[])}</div></section>`:""}
+ ${sn.notes&&sn.notes.length?`<section class="card"><h2>${esc(t("res_support"))}</h2><ul class="prec">${sn.notes.map(n=>`<li class="n-${n.kind}">${esc(n.text)}</li>`).join("")}</ul>${(sn.urgent||[]).map(u=>`<div class="urgent"><b>${esc(u)}</b></div>`).join("")}</section>`:""}
+ <section class="card"><h2>${esc(t("res_imp"))}</h2><ul class="imp">${tx.impression.map(s=>`<li ${dl()}>${esc(s)}</li>`).join("")}</ul></section>
+ ${tx.tests.length?`<section class="card"><h2>${esc(t("res_tests"))}</h2>${tx.tests.map((p,i)=>`<div class="test" ${dl()}><div class="n">${i+1}</div><div><b>${esc(p[0])}</b><span>${esc(p[1])}</span></div></div>`).join("")}</section>`:""}
+ ${tx.precautions.length||tx.urgent?`<section class="card"><h2>${esc(t("res_prec"))}</h2><ul class="prec">${tx.precautions.map(s=>`<li ${dl()}>${esc(s)}</li>`).join("")}</ul>${tx.urgent?`<div class="urgent"><b>${esc(tx.urgent)}</b></div>`:""}<div class="fu">${esc(t("res_follow"))}: ${esc(ex.followup)}</div></section>`:""}
+ ${bars?`<section class="card"><h2>${esc(t("why_title"))}</h2><p class="mut" style="margin-top:0">${esc(t("why_plain"))}</p><div class="legend"><span><b style="background:var(--hi)"></b>${esc(t("raises"))}</span><span><b style="background:#2F8FBF"></b>${esc(t("lowers"))}</span></div>${bars}<p class="mut">${esc(t("why_note"))}</p></section>`:""}
+ ${x.heat&&LASTIMG?`<section class="card"><h2>${esc(t("res_heat"))}</h2><div class="heat" id="ht"><img src="${LASTIMG}" alt=""></div><p class="mut">${esc(t("heat_note"))}</p></section>`:""}
+ <section class="card"><h2>${esc(t("res_factors"))}</h2><ul class="prec">${ex.factors.map(s=>`<li>${esc(s)}</li>`).join("")}</ul></section>
+ <section class="card about"><h2>${esc(ex.about.title)}</h2>${ex.about.paragraphs.map(s=>`<p>${esc(s)}</p>`).join("")}</section>
+ <div class="actions"><select id="rl2" aria-label="${esc(t("rep_lang"))}"><option value="en">${esc(t("rep_en"))}</option><option value="ur">${esc(t("rep_ur"))}</option><option value="both">${esc(t("rep_both"))}</option></select><button class="btn main" id="pdf" type="button">${esc(t("dl_pdf"))}</button><button class="btn" onclick="window.print()" type="button">${esc(t("print"))}</button><button class="btn" id="nw" type="button">${esc(t("new_check"))}</button></div>`;
+ $("#rl2").value=L==="ur"?"ur":"en";
+ if(x.heat&&LASTIMG)$("#ht").appendChild(heatCanvas(x.heat));
+ {const e=$("#sc_n"),to=+e.dataset.to,t0=performance.now();const step=n=>{const k=Math.min(1,(n-t0)/1100);e.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{const m=$("#mk");if(m)m.style.left=(Math.max(.02,Math.min(.98,j.position))*100)+"%"}));
+ $("#pdf").onclick=downloadPdf;$("#nw").onclick=reset}
+function reset(){$("#fm").reset();$("#pv").style.display="none";$("#durbox").style.display="none";LAST=null;LASTIMG=null;$("#ferr").textContent="";apply();window.scrollTo({top:0,behavior:"smooth"})}
+function collect(forPdf){const er=$("#ferr");er.textContent="";const f=$("#img").files[0];let clinical=null;
+ if(MODE!=="xray"){const age=parseFloat($("#age").value);if(!(age>=15&&age<=110)){er.textContent=t("age_bad");return null}
+  const sx=document.querySelector("input[name=sex]:checked");if(!sx){er.textContent=t("sex_pick");return null}
+  if($("#tbh").value==="current"){er.textContent=t("ontx");return null}
+  const cough=$("#cough").checked;if(cough&&!$("#dur").value){er.textContent=t("need_dur");return null}
+  const num=id=>$(id).value===""?null:parseFloat($(id).value);
+  clinical={age,male:sx.value==="m",tb_history:$("#tbh").value,cough,cough_dur:cough?parseInt($("#dur").value):0,fever:$("#fever").checked,chestpain:$("#chestpain").checked,nightsweats:$("#nightsweats").checked,weightlost:$("#weightlost").checked,crp:num("#crp"),cad:num("#cad")}}
+ if(MODE!=="clinical"&&!f){er.textContent=t("need_one");return null}
+ const ref=$("#ref").value.trim(),save=$("#save").checked&&!forPdf;if(save&&!ref){er.textContent=t("e_ref_required");return null}
+ const fd=new FormData();fd.append("data",JSON.stringify({clinical,ref,save,lang:forPdf||"en",support:support(),visit_id:forPdf&&LAST&&LAST.saved?LAST.saved:null}));if(MODE!=="clinical"&&f)fd.append("image",f);return fd}
+function support(){const n=id=>$(id).value===""?null:parseFloat($(id).value),b=id=>$(id).checked,v=id=>$(id).value;
+ const o={hemoptysis:b("#hemoptysis"),breathless:b("#breathless"),fatigue:b("#fatigue"),appetite_loss:b("#appetite_loss"),diabetes:b("#diabetes"),contact:b("#contact"),smoker:b("#smoker"),hiv:v("#hiv"),bmi:n("#bmi"),esr:n("#esr"),wbc:n("#wbc"),hb:n("#hb"),xpert:v("#xpert"),afb:v("#afb"),culture:v("#culture"),igra:v("#igra"),mantoux_mm:n("#mantoux_mm")};
+ return Object.values(o).some(x=>x!==false&&x!==""&&x!==null)?o:null}
+const FILL={crp:"#crp",esr:"#esr",wbc:"#wbc",hb:"#hb",mantoux_mm:"#mantoux_mm",xpert:"#xpert",afb:"#afb",culture:"#culture",igra:"#igra",hiv:"#hiv"};
+$("#rep").onchange=async e=>{const f=e.target.files[0],box=$("#upres");if(!f)return;box.textContent=t("analysing");const fd=new FormData();fd.append("file",f);
+ try{const r=await fetch("/api/extract",{method:"POST",body:fd}),j=await r.json();if(!r.ok){box.textContent=T[L]&&T[L]["e_"+j.detail]?t("e_"+j.detail):t("up_fail");return}
+  const v=j.values||{};let n=0;const rows=[];
+  for(const k in v){const val=v[k];let el=FILL[k]?$(FILL[k]):null;if(k==="age"){$("#age").value=val;n++}else if(k==="male"){const rd=document.querySelector(`input[name=sex][value=${val?"m":"f"}]`);if(rd)rd.checked=true;n++}else if(k==="hemoptysis"){$("#hemoptysis").checked=true;n++}
+   else if(el){el.value=val;el.dispatchEvent(new Event("change"));n++;el.classList.add("filled");setTimeout(()=>el.classList.remove("filled"),2600)}
+   if(j.source&&j.source[k])rows.push(`<li><b>${esc(k)}</b> = ${esc(typeof val==="boolean"?"✔":val)} <span class="mut">(${esc(t("up_src"))}: “${esc(j.source[k])}”)</span></li>`)}
+  box.innerHTML=(j.report_no?`<p class="okmsg"><a href="#" id="kn">${esc(t("up_known",{n:j.report_no}))}</a></p>`:"")+(n?`<p class="okmsg">✔ ${esc(t("up_found",{n}))}</p><ul>${rows.join("")}</ul>`:esc(t("up_none")));if(j.report_no)$("#kn").onclick=e=>{e.preventDefault();tab("rec");findReport(j.report_no)}}catch(x){box.textContent=t("up_fail")}};
+function askPin(){if(!INFO.pin_required||PIN)return true;const p=prompt(t("pin_ask"));if(!p)return false;PIN=p;try{sessionStorage.setItem("pin",p)}catch(e){}return true}
+function fail(j){const m=j&&j.detail;if(m==="pin_required"){PIN="";try{sessionStorage.removeItem("pin")}catch(e){}}return m==="on_tb_treatment"?t("ontx"):m==="cough_dur"?t("need_dur"):m==="nothing_to_check"?t("need_one"):m==="xray_not_installed"?t("xray_na"):typeof m==="string"&&m.startsWith("x-ray")?t("xray_failed",{e:m.slice(7)}):typeof m==="string"&&T[L]&&T[L]["e_"+m]?t("e_"+m):t("err")}
+$("#fm").onsubmit=async e=>{e.preventDefault();const fd=collect();if(!fd)return;if($("#save").checked&&!askPin())return;const b=$("#go");b.disabled=true;b.textContent=t("wait");mas("Lower",0).then(m=>{$("#out").innerHTML=`<div class="card empty"><div class="load">${m}</div><p>${esc(t("analysing"))}</p></div>`});
+ try{const r=await fetch("/api/screen",{method:"POST",body:fd,headers:hdrs()}),j=await r.json();if(!r.ok){$("#ferr").textContent=fail(j);return}await render(j);$("#out").scrollIntoView({behavior:"smooth",block:"start"})}catch(x){$("#ferr").textContent=t("err")}finally{b.disabled=false;b.textContent=t("go")}};
+async function downloadPdf(){const lg=$("#rl2").value,fd=collect(lg);if(!fd)return;const b=$("#pdf");b.disabled=true;try{const r=await fetch("/api/report",{method:"POST",body:fd});if(!r.ok){$("#ferr").textContent=t("pdf_fail");return}
+ const u=URL.createObjectURL(await r.blob()),a=document.createElement("a");a.href=u;a.download="report_"+lg+".pdf";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}catch(x){$("#ferr").textContent=t("pdf_fail")}finally{b.disabled=false}}
+/* records */
+async function api(url,opt){opt=opt||{};opt.headers=Object.assign(hdrs(),opt.headers||{});const r=await fetch(url,opt);let j=null;try{j=await r.json()}catch(e){}if(!r.ok)throw fail(j);return j}
+async function loadList(){$("#rerr").textContent="";if(!askPin()){$("#rl").innerHTML="";return}
+ try{const rows=await api("/api/patients?q="+encodeURIComponent($("#q").value));$("#exp").onclick=exportCsv;
+  $("#rl").innerHTML=rows.length?`<table class="t"><tr><th>${esc(t("ref"))}</th><th>${esc(t("hist"))}</th><th>${esc(t("rec_last"))}</th><th>${esc(t("col_result"))}</th><th></th></tr>${rows.map(r=>`<tr><td><b>${esc(r.ref)}</b></td><td>${r.visits}</td><td>${esc(r.last_ts.slice(0,10))}</td><td><span class="pill ${r.last_overall}">${esc(t("band_"+r.last_overall))}</span></td><td><button class="btn" data-ref="${esc(r.ref)}" type="button">${esc(t("rec_open"))}</button></td></tr>`).join("")}</table>`:`<p class="mut">${esc(t("rec_empty"))}</p>`;
+  document.querySelectorAll("#rl button[data-ref]").forEach(b=>b.onclick=()=>openPat(b.dataset.ref))}catch(m){$("#rerr").textContent=typeof m==="string"?m:t("err")}}
+async function findReport(no){try{const j=await api("/api/reports/"+encodeURIComponent(no));await openPat(j.visit.ref);$("#rerr").textContent=t("rep_no")+": "+j.report_no}catch(m){$("#rerr").textContent=m===t("err")||!m?t("rep_nf"):m}}
+$("#rn").placeholder="TBL-2026-000001-X";$("#rnb").onclick=()=>{const v=$("#rn").value.trim();if(v){tab("rec");findReport(v)}};$("#rn").onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();$("#rnb").click()}};
+$("#q").oninput=()=>{clearTimeout(window._qt);window._qt=setTimeout(loadList,250)};
+async function exportCsv(e){e.preventDefault();try{const r=await fetch("/api/patients/export.csv",{headers:hdrs()});if(!r.ok)throw 0;const u=URL.createObjectURL(await r.blob()),a=document.createElement("a");a.href=u;a.download="visits.csv";document.body.appendChild(a);a.click();a.remove()}catch(x){$("#rerr").textContent=t("err")}}
+async function openPat(ref){try{const j=await api("/api/patients/"+encodeURIComponent(ref)),vs=j.visits;
+  $("#rd").innerHTML=`<section class="card"><h2>${esc(ref)} · ${esc(t("visits_n",{n:vs.length}))}</h2><div class="chart">${chart(vs)}</div><p class="mut">${esc(t("chart_title"))}</p>
+  <table class="t"><tr><th>${esc(t("rep_no"))}</th><th>${esc(t("col_date"))}</th><th>${esc(t("col_result"))}</th><th>${esc(t("col_score"))}</th><th>${esc(t("col_lab"))}</th></tr>${vs.slice().reverse().map(v=>`<tr><td><code>${esc(v.report_no||"")}</code></td><td>${esc(v.ts.replace("T"," ").slice(0,16))}</td><td><span class="pill ${v.overall}">${esc(t("band_"+v.overall))}</span></td><td>${Math.round(v.position*100)}</td><td><select data-vid="${v.id}" aria-label="${esc(t("lab_set"))}"><option value="">${esc(t("lab_none"))}</option><option value="tb">${esc(t("lab_tb"))}</option><option value="not_tb">${esc(t("lab_not"))}</option></select></td></tr>`).join("")}</table>
+  <div class="actions" style="margin-top:12px"><button class="btn main" id="again" type="button">${esc(t("follow_prefill"))}</button><button class="btn danger" id="del" type="button">${esc(t("rec_delete"))}</button></div></section>`;
+  vs.forEach(v=>{const s=$(`select[data-vid="${v.id}"]`);s.value=v.outcome||"";s.onchange=async()=>{if(!s.value)return;try{await api("/api/visits/"+v.id+"/outcome",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({outcome:s.value})});$("#rerr").textContent=t("lab_saved")}catch(m){$("#rerr").textContent=typeof m==="string"?m:t("err")}}});
+  $("#again").onclick=()=>{$("#ref").value=ref;$("#save").checked=true;tab("new");$("#age").focus()};
+  $("#del").onclick=async()=>{if(!confirm(t("rec_del_confirm")))return;try{await api("/api/patients/"+encodeURIComponent(ref),{method:"DELETE"});$("#rd").innerHTML="";loadList()}catch(m){$("#rerr").textContent=typeof m==="string"?m:t("err")}};
+  $("#rd").scrollIntoView({behavior:"smooth"})}catch(m){$("#rerr").textContent=typeof m==="string"?m:t("err")}}
+(async()=>{bubs();try{T=await(await fetch("/api/i18n")).json();INFO=await(await fetch("/api/info")).json()}catch(e){}
+ mas("Lower",0).then(s=>$("#heromas").innerHTML=s);
+ if(!INFO.xray_available){for(const k of["xray","both"]){$("#m_"+k).disabled=true;$("#m_"+k).title=t("xray_na")}}
+ setMode("clinical");apply()})();
+</script></body></html>

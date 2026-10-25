@@ -1,0 +1,10 @@
+{
+ "size": 224,
+ "channels": 3,
+ "mean": 0.5,
+ "std": 0.25,
+ "per_image_norm": true,
+ "logits": true,
+ "thr_low": 0.8994690179824829,
+ "thr_high": 0.8994690179824829
+}
