@@ -3,7 +3,7 @@
 # TBTech Lens
 
 Clinical and chest X-ray screening for tuberculosis, with explanations and a printable report. English and Urdu.
-Maintainer: Hammad Anwar,Ali Murtasim.
+Maintainer: Hammad Anwar, Ali Murtasim.
 
 
 ## What it does
